@@ -1,1 +1,1 @@
-export { Editor } from './components/plate/editor'
+export { Editor } from './plate/editor'
