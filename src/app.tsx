@@ -14,6 +14,10 @@ paragraph: lorem ipsum
 #### H4
 ##### H5
 ###### H6
+
+**bold text**
+
+*italicized text*
 `
 
 const editor = createPlateEditor({ plugins })
