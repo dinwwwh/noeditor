@@ -68,6 +68,8 @@ function greet(name) {
 </div>
 \`\`\`
 
+~~The world is flat.~~
+
 `
 
 const editor = createPlateEditor({ plugins })

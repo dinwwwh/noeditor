@@ -2,7 +2,7 @@ import { createPlugins } from '@udecode/plate-common'
 import { ELEMENT_PARAGRAPH, createParagraphPlugin } from '@udecode/plate-paragraph'
 import { ELEMENT_H1, ELEMENT_H2, ELEMENT_H3, ELEMENT_H4, ELEMENT_H5, ELEMENT_H6, createHeadingPlugin } from '@udecode/plate-heading'
 import { withProps } from '@udecode/cn'
-import { MARK_BOLD, MARK_CODE, MARK_ITALIC, createBoldPlugin, createCodePlugin, createItalicPlugin } from '@udecode/plate-basic-marks'
+import { MARK_BOLD, MARK_CODE, MARK_ITALIC, MARK_STRIKETHROUGH, createBoldPlugin, createCodePlugin, createItalicPlugin, createStrikethroughPlugin } from '@udecode/plate-basic-marks'
 import { ELEMENT_BLOCKQUOTE, createBlockquotePlugin } from '@udecode/plate-block-quote'
 import { ELEMENT_LI, ELEMENT_OL, ELEMENT_UL, createListPlugin } from '@udecode/plate-list'
 import { ELEMENT_HR, createHorizontalRulePlugin } from '@udecode/plate-horizontal-rule'
@@ -23,6 +23,7 @@ import { ImageElement } from './image/element'
 import { TableDataElement, TableElement, TableHeaderElement, TableRowElement } from './table/element'
 import { CodeBlockElement, CodeBlockLineElement, CodeBlockSyntaxLeaf } from './code-block/element'
 import { codeBlockPlugin } from './code-block/plugin'
+import { StrikethroughMark } from './strikethrough/mark'
 
 export const plugins = createPlugins([
   createParagraphPlugin(),
@@ -37,6 +38,7 @@ export const plugins = createPlugins([
   createImagePlugin(),
   createTablePlugin(),
   codeBlockPlugin,
+  createStrikethroughPlugin(),
 ], {
   components: {
     [ELEMENT_PARAGRAPH]: ParagraphElement,
@@ -63,5 +65,6 @@ export const plugins = createPlugins([
     [ELEMENT_CODE_BLOCK]: CodeBlockElement,
     [ELEMENT_CODE_LINE]: CodeBlockLineElement,
     [ELEMENT_CODE_SYNTAX]: CodeBlockSyntaxLeaf,
+    [MARK_STRIKETHROUGH]: StrikethroughMark,
   },
 })
