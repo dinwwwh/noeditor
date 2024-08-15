@@ -1,16 +1,12 @@
-import type { TElement } from '@udecode/plate-common'
 import { Plate, PlateContent } from '@udecode/plate-common'
 import { content } from './editor.css'
 import { plugins } from './plugins'
 
-export interface EmailEditorProps {
-  initialValue?: TElement[]
-  onChange?: (value: TElement[]) => void
-}
+type EmailEditorProps = Omit<React.ComponentPropsWithoutRef<typeof Plate>, 'children' | 'plugins'>
 
-export function Editor({ initialValue, onChange }: EmailEditorProps) {
+export function Editor(props: EmailEditorProps) {
   return (
-    <Plate plugins={plugins} initialValue={initialValue} onChange={onChange}>
+    <Plate {...props} plugins={plugins}>
       <PlateContent className={content} />
     </Plate>
   )

@@ -32,6 +32,9 @@ paragraph: lorem ipsum
 \`code\`
 
 ---
+
+[title](https://www.example.com)
+
 `
 
 const editor = createPlateEditor({ plugins })
