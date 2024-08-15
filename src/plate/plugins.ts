@@ -9,6 +9,7 @@ import { ELEMENT_HR, createHorizontalRulePlugin } from '@udecode/plate-horizonta
 import { ELEMENT_LINK, createLinkPlugin } from '@udecode/plate-link'
 import { ELEMENT_IMAGE, createImagePlugin } from '@udecode/plate-media'
 import { ELEMENT_TABLE, ELEMENT_TD, ELEMENT_TH, ELEMENT_TR, createTablePlugin } from '@udecode/plate-table'
+import { ELEMENT_CODE_BLOCK, ELEMENT_CODE_LINE, ELEMENT_CODE_SYNTAX } from '@udecode/plate-code-block'
 import { ParagraphElement } from './paragraph/element'
 import { HeadingElement } from './heading/element'
 import { BoldMark } from './bold/mark'
@@ -20,6 +21,8 @@ import { HrElement } from './horizontal-rule/element'
 import { LinkElement } from './link/element'
 import { ImageElement } from './image/element'
 import { TableDataElement, TableElement, TableHeaderElement, TableRowElement } from './table/element'
+import { CodeBlockElement, CodeBlockLineElement, CodeBlockSyntaxLeaf } from './code-block/element'
+import { codeBlockPlugin } from './code-block/plugin'
 
 export const plugins = createPlugins([
   createParagraphPlugin(),
@@ -33,6 +36,7 @@ export const plugins = createPlugins([
   createLinkPlugin(),
   createImagePlugin(),
   createTablePlugin(),
+  codeBlockPlugin,
 ], {
   components: {
     [ELEMENT_PARAGRAPH]: ParagraphElement,
@@ -56,5 +60,8 @@ export const plugins = createPlugins([
     [ELEMENT_TR]: TableRowElement,
     [ELEMENT_TH]: TableHeaderElement,
     [ELEMENT_TD]: TableDataElement,
+    [ELEMENT_CODE_BLOCK]: CodeBlockElement,
+    [ELEMENT_CODE_LINE]: CodeBlockLineElement,
+    [ELEMENT_CODE_SYNTAX]: CodeBlockSyntaxLeaf,
   },
 })

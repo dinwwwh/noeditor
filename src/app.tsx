@@ -47,6 +47,27 @@ paragraph: lorem ipsum
 | Header | Title | Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 | Column 7 | Column 8 | Column 9 | Column 10 |
 | Paragraph | Text | Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 | Column 7 | Column 8 | Column 9 | Column 10 |
 | Paragraph | Text | Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 | Column 7 | Column 8 | Column 9 | Column 10 |
+
+\`\`\`
+{
+  "firstName": "John",
+  "lastName": "Smith",
+  "age": 25
+}
+\`\`\`
+
+\`\`\`js
+function greet(name) {
+  return \`Hello, \${name}!\`;
+}
+\`\`\`
+
+\`\`\`html
+<div class="hello">
+  <h1>{{ msg }}</h1>
+</div>
+\`\`\`
+
 `
 
 const editor = createPlateEditor({ plugins })
