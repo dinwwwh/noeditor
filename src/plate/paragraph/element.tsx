@@ -4,13 +4,11 @@ import { paragraph } from './element.css'
 
 export const ParagraphElement = forwardRef(
   (
-    { children, className, ...props }: React.ComponentPropsWithoutRef<typeof PlateElement>,
+    props: React.ComponentPropsWithoutRef<typeof PlateElement>,
     ref: React.ElementRef<typeof PlateElement>,
   ) => {
     return (
-      <PlateElement {...props} ref={ref} asChild>
-        <p className={`${paragraph} ${className}`}>{children}</p>
-      </PlateElement>
+      <PlateElement {...props} ref={ref} className={`${paragraph} ${props.className}`} />
     )
   },
 )

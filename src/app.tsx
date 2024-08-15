@@ -35,6 +35,7 @@ paragraph: lorem ipsum
 
 [title](https://www.example.com)
 
+![image](https://placehold.co/600x400/EEE/31343C)
 `
 
 const editor = createPlateEditor({ plugins })

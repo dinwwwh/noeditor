@@ -22,6 +22,7 @@
     "@udecode/plate-horizontal-rule": "^36.0.0",
     "@udecode/plate-link": "^36.3.8",
     "@udecode/plate-list": "^36.0.0",
+    "@udecode/plate-media": "^36.2.2",
     "@udecode/plate-paragraph": "^36.0.0",
     "@udecode/plate-serializer-html": "^36.0.0",
     "@vanilla-extract/css": "^1.15.3",
