@@ -8,5 +8,5 @@ globalStyle('html, body', {
 })
 
 globalStyle('code, kbd, samp, pre', {
-  fontFamily: `'JetBrains Mono Variable', monospace`,
+  fontFamily: `'JetBrains Mono Variable', monospace !important`, // TODO: remove !important
 })

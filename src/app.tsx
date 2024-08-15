@@ -28,6 +28,8 @@ paragraph: lorem ipsum
 - First item
 - Second item
 - Third item
+
+\`code\`
 `
 
 const editor = createPlateEditor({ plugins })
