@@ -4,7 +4,7 @@ import { ELEMENT_H1, ELEMENT_H2, ELEMENT_H3, ELEMENT_H4, ELEMENT_H5, ELEMENT_H6,
 import { withProps } from '@udecode/cn'
 import { MARK_BOLD, MARK_CODE, MARK_ITALIC, MARK_STRIKETHROUGH, createBoldPlugin, createCodePlugin, createItalicPlugin, createStrikethroughPlugin } from '@udecode/plate-basic-marks'
 import { ELEMENT_BLOCKQUOTE, createBlockquotePlugin } from '@udecode/plate-block-quote'
-import { ELEMENT_LI, ELEMENT_OL, ELEMENT_UL, createListPlugin } from '@udecode/plate-list'
+import { ELEMENT_LI, ELEMENT_OL, ELEMENT_TODO_LI, ELEMENT_UL, createListPlugin, createTodoListPlugin } from '@udecode/plate-list'
 import { ELEMENT_HR, createHorizontalRulePlugin } from '@udecode/plate-horizontal-rule'
 import { ELEMENT_LINK, createLinkPlugin } from '@udecode/plate-link'
 import { ELEMENT_IMAGE, createImagePlugin } from '@udecode/plate-media'
@@ -24,6 +24,7 @@ import { TableDataElement, TableElement, TableHeaderElement, TableRowElement } f
 import { CodeBlockElement, CodeBlockLineElement, CodeBlockSyntaxLeaf } from './code-block/element'
 import { codeBlockPlugin } from './code-block/plugin'
 import { StrikethroughMark } from './strikethrough/mark'
+import { TodoListElement } from './todo-list/element'
 
 export const plugins = createPlugins([
   createParagraphPlugin(),
@@ -39,6 +40,7 @@ export const plugins = createPlugins([
   createTablePlugin(),
   codeBlockPlugin,
   createStrikethroughPlugin(),
+  createTodoListPlugin(),
 ], {
   components: {
     [ELEMENT_PARAGRAPH]: ParagraphElement,
@@ -66,5 +68,6 @@ export const plugins = createPlugins([
     [ELEMENT_CODE_LINE]: CodeBlockLineElement,
     [ELEMENT_CODE_SYNTAX]: CodeBlockSyntaxLeaf,
     [MARK_STRIKETHROUGH]: StrikethroughMark,
+    [ELEMENT_TODO_LI]: TodoListElement,
   },
 })

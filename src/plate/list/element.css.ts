@@ -3,6 +3,8 @@ import { recipe, rem, style } from '@fizzui/styles'
 export const list = recipe({
   base: {
     paddingInlineStart: rem(24),
+    paddingTop: rem(3),
+    marginBottom: rem(3),
   },
 
   variants: {

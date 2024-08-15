@@ -14,6 +14,8 @@
     "@fizzui/styles": "^0.0.5",
     "@fontsource-variable/inter": "^5.0.20",
     "@fontsource-variable/jetbrains-mono": "^5.0.21",
+    "@radix-ui/react-checkbox": "^1.1.1",
+    "@tabler/icons-react": "^3.12.0",
     "@udecode/cn": "^33.0.0",
     "@udecode/plate-basic-marks": "^36.0.0",
     "@udecode/plate-block-quote": "^36.0.0",
