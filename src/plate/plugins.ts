@@ -8,6 +8,7 @@ import { ELEMENT_LI, ELEMENT_OL, ELEMENT_UL, createListPlugin } from '@udecode/p
 import { ELEMENT_HR, createHorizontalRulePlugin } from '@udecode/plate-horizontal-rule'
 import { ELEMENT_LINK, createLinkPlugin } from '@udecode/plate-link'
 import { ELEMENT_IMAGE, createImagePlugin } from '@udecode/plate-media'
+import { ELEMENT_TABLE, ELEMENT_TD, ELEMENT_TH, ELEMENT_TR, createTablePlugin } from '@udecode/plate-table'
 import { ParagraphElement } from './paragraph/element'
 import { HeadingElement } from './heading/element'
 import { BoldMark } from './bold/mark'
@@ -18,6 +19,7 @@ import { CodeMark } from './code/mark'
 import { HrElement } from './horizontal-rule/element'
 import { LinkElement } from './link/element'
 import { ImageElement } from './image/element'
+import { TableDataElement, TableElement, TableHeaderElement, TableRowElement } from './table/element'
 
 export const plugins = createPlugins([
   createParagraphPlugin(),
@@ -30,6 +32,7 @@ export const plugins = createPlugins([
   createHorizontalRulePlugin(),
   createLinkPlugin(),
   createImagePlugin(),
+  createTablePlugin(),
 ], {
   components: {
     [ELEMENT_PARAGRAPH]: ParagraphElement,
@@ -49,5 +52,9 @@ export const plugins = createPlugins([
     [ELEMENT_HR]: HrElement,
     [ELEMENT_LINK]: LinkElement,
     [ELEMENT_IMAGE]: ImageElement,
+    [ELEMENT_TABLE]: TableElement,
+    [ELEMENT_TR]: TableRowElement,
+    [ELEMENT_TH]: TableHeaderElement,
+    [ELEMENT_TD]: TableDataElement,
   },
 })

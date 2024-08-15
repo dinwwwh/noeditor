@@ -36,6 +36,17 @@ paragraph: lorem ipsum
 [title](https://www.example.com)
 
 ![image](https://placehold.co/600x400/EEE/31343C)
+
+| Syntax | Description | 
+| ----------- | ----------- |
+| Header | Title |
+| Paragraph | Text |
+
+| Syntax | Description | Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 | Column 7 | Colssssssssssumn 8 | Cossssssssslumn 9 | Column 10 |
+| ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
+| Header | Title | Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 | Column 7 | Column 8 | Column 9 | Column 10 |
+| Paragraph | Text | Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 | Column 7 | Column 8 | Column 9 | Column 10 |
+| Paragraph | Text | Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 | Column 7 | Column 8 | Column 9 | Column 10 |
 `
 
 const editor = createPlateEditor({ plugins })
