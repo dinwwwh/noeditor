@@ -18,6 +18,8 @@ paragraph: lorem ipsum
 **bold text**
 
 *italicized text*
+
+> blockquote
 `
 
 const editor = createPlateEditor({ plugins })

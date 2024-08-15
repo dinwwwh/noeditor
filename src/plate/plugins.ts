@@ -3,16 +3,19 @@ import { ELEMENT_PARAGRAPH, createParagraphPlugin } from '@udecode/plate-paragra
 import { ELEMENT_H1, ELEMENT_H2, ELEMENT_H3, ELEMENT_H4, ELEMENT_H5, ELEMENT_H6, createHeadingPlugin } from '@udecode/plate-heading'
 import { withProps } from '@udecode/cn'
 import { MARK_BOLD, MARK_ITALIC, createBoldPlugin, createItalicPlugin } from '@udecode/plate-basic-marks'
+import { ELEMENT_BLOCKQUOTE, createBlockquotePlugin } from '@udecode/plate-block-quote'
 import { ParagraphElement } from './paragraph/element'
 import { HeadingElement } from './heading/element'
 import { BoldMark } from './bold/mark'
 import { ItalicMark } from './italic/mark'
+import { BlockquoteElement } from './blockquote/element'
 
 export const plugins = createPlugins([
   createParagraphPlugin(),
   createHeadingPlugin(),
   createBoldPlugin(),
   createItalicPlugin(),
+  createBlockquotePlugin(),
 ], {
   components: {
     [ELEMENT_PARAGRAPH]: ParagraphElement,
@@ -24,5 +27,6 @@ export const plugins = createPlugins([
     [ELEMENT_H6]: withProps(HeadingElement, { variant: 'h6' }),
     [MARK_BOLD]: BoldMark,
     [MARK_ITALIC]: ItalicMark,
+    [ELEMENT_BLOCKQUOTE]: BlockquoteElement,
   },
 })
