@@ -5,6 +5,7 @@ import { withProps } from '@udecode/cn'
 import { MARK_BOLD, MARK_CODE, MARK_ITALIC, createBoldPlugin, createCodePlugin, createItalicPlugin } from '@udecode/plate-basic-marks'
 import { ELEMENT_BLOCKQUOTE, createBlockquotePlugin } from '@udecode/plate-block-quote'
 import { ELEMENT_LI, ELEMENT_OL, ELEMENT_UL, createListPlugin } from '@udecode/plate-list'
+import { ELEMENT_HR, createHorizontalRulePlugin } from '@udecode/plate-horizontal-rule'
 import { ParagraphElement } from './paragraph/element'
 import { HeadingElement } from './heading/element'
 import { BoldMark } from './bold/mark'
@@ -12,6 +13,7 @@ import { ItalicMark } from './italic/mark'
 import { BlockquoteElement } from './blockquote/element'
 import { ListElement, ListItemElement } from './list/element'
 import { CodeMark } from './code/mark'
+import { HrElement } from './horizontal-rule/element'
 
 export const plugins = createPlugins([
   createParagraphPlugin(),
@@ -21,6 +23,7 @@ export const plugins = createPlugins([
   createBlockquotePlugin(),
   createListPlugin(),
   createCodePlugin(),
+  createHorizontalRulePlugin(),
 ], {
   components: {
     [ELEMENT_PARAGRAPH]: ParagraphElement,
@@ -37,5 +40,6 @@ export const plugins = createPlugins([
     [ELEMENT_OL]: withProps(ListElement, { variant: 'ol' }),
     [ELEMENT_LI]: ListItemElement,
     [MARK_CODE]: CodeMark,
+    [ELEMENT_HR]: HrElement,
   },
 })
