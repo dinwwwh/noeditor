@@ -22,6 +22,7 @@
     "@udecode/plate-code-block": "^36.0.0",
     "@udecode/plate-common": "^36.3.7",
     "@udecode/plate-heading": "^36.0.12",
+    "@udecode/plate-highlight": "^36.0.0",
     "@udecode/plate-horizontal-rule": "^36.0.0",
     "@udecode/plate-link": "^36.3.8",
     "@udecode/plate-list": "^36.0.0",
@@ -31,11 +32,18 @@
     "@udecode/plate-table": "^36.3.8",
     "@vanilla-extract/css": "^1.15.3",
     "@vanilla-extract/recipes": "^0.5.3",
-    "marked": "^14.0.0",
     "prismjs": "^1.29.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "slate-react": "^0.108.0"
+    "rehype-stringify": "^10.0.0",
+    "remark": "^15.0.1",
+    "remark-flexible-markers": "^1.2.1",
+    "remark-gfm": "^4.0.0",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.0",
+    "remark-stringify": "^11.0.0",
+    "slate-react": "^0.108.0",
+    "unified": "^11.0.5"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.25.1",

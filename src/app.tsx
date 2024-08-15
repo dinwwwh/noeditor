@@ -1,8 +1,13 @@
 import { type TElement, createPlateEditor, deserializeHtml } from '@udecode/plate-common'
 import { useEffect, useState } from 'react'
-import { marked } from 'marked'
-import { container } from './app.css'
+import { unified } from 'unified'
+import rehypeStringify from 'rehype-stringify'
+import remarkGfm from 'remark-gfm'
+import remarkParse from 'remark-parse'
+import remarkRehype from 'remark-rehype'
+import remarkFlexibleMarkers from 'remark-flexible-markers'
 import { plugins } from './plate/plugins'
+import { container } from './app.css'
 import { Editor } from '.'
 
 const markdown = `
@@ -70,11 +75,19 @@ function greet(name) {
 
 ~~The world is flat.~~
 
+I need to highlight these ==very important words==.
+
 `
 
 const editor = createPlateEditor({ plugins })
-const html = await marked.parse(markdown)
-const initialValue = deserializeHtml(editor, { element: html }) as TElement[]
+const html = await unified()
+  .use(remarkParse)
+  .use(remarkGfm)
+  .use(remarkFlexibleMarkers)
+  .use(remarkRehype)
+  .use(rehypeStringify)
+  .process(markdown)
+const initialValue = deserializeHtml(editor, { element: html.toString() }) as TElement[]
 
 export function App() {
   const [value, setValue] = useState<TElement[] | undefined>()

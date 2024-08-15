@@ -10,6 +10,7 @@ import { ELEMENT_LINK, createLinkPlugin } from '@udecode/plate-link'
 import { ELEMENT_IMAGE, createImagePlugin } from '@udecode/plate-media'
 import { ELEMENT_TABLE, ELEMENT_TD, ELEMENT_TH, ELEMENT_TR, createTablePlugin } from '@udecode/plate-table'
 import { ELEMENT_CODE_BLOCK, ELEMENT_CODE_LINE, ELEMENT_CODE_SYNTAX } from '@udecode/plate-code-block'
+import { MARK_HIGHLIGHT, createHighlightPlugin } from '@udecode/plate-highlight'
 import { ParagraphElement } from './paragraph/element'
 import { HeadingElement } from './heading/element'
 import { BoldMark } from './bold/mark'
@@ -25,6 +26,7 @@ import { CodeBlockElement, CodeBlockLineElement, CodeBlockSyntaxLeaf } from './c
 import { codeBlockPlugin } from './code-block/plugin'
 import { StrikethroughMark } from './strikethrough/mark'
 import { TodoListElement } from './todo-list/element'
+import { HighlightMark } from './highlight/mark'
 
 export const plugins = createPlugins([
   createParagraphPlugin(),
@@ -41,6 +43,7 @@ export const plugins = createPlugins([
   codeBlockPlugin,
   createStrikethroughPlugin(),
   createTodoListPlugin(),
+  createHighlightPlugin(),
 ], {
   components: {
     [ELEMENT_PARAGRAPH]: ParagraphElement,
@@ -69,5 +72,6 @@ export const plugins = createPlugins([
     [ELEMENT_CODE_SYNTAX]: CodeBlockSyntaxLeaf,
     [MARK_STRIKETHROUGH]: StrikethroughMark,
     [ELEMENT_TODO_LI]: TodoListElement,
+    [MARK_HIGHLIGHT]: HighlightMark,
   },
 })
