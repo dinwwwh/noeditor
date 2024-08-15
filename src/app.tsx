@@ -20,6 +20,14 @@ paragraph: lorem ipsum
 *italicized text*
 
 > blockquote
+
+1. First item
+2. Second item
+3. Third item
+
+- First item
+- Second item
+- Third item
 `
 
 const editor = createPlateEditor({ plugins })
