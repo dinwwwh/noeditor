@@ -6,6 +6,7 @@ import remarkGfm from 'remark-gfm'
 import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
 import remarkFlexibleMarkers from 'remark-flexible-markers'
+import remarkSupersub from 'remark-supersub'
 import { plugins } from './plate/plugins'
 import { container } from './app.css'
 import { Editor } from '.'
@@ -77,13 +78,18 @@ function greet(name) {
 
 I need to highlight these ==very important words==.
 
+H~2~O
+
+X^2^
+
 `
 
 const editor = createPlateEditor({ plugins })
 const html = await unified()
   .use(remarkParse)
-  .use(remarkGfm)
+  .use(remarkGfm, { singleTilde: false })
   .use(remarkFlexibleMarkers)
+  .use(remarkSupersub)
   .use(remarkRehype)
   .use(rehypeStringify)
   .process(markdown)

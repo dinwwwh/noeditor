@@ -2,7 +2,7 @@ import { createPlugins } from '@udecode/plate-common'
 import { ELEMENT_PARAGRAPH, createParagraphPlugin } from '@udecode/plate-paragraph'
 import { ELEMENT_H1, ELEMENT_H2, ELEMENT_H3, ELEMENT_H4, ELEMENT_H5, ELEMENT_H6, createHeadingPlugin } from '@udecode/plate-heading'
 import { withProps } from '@udecode/cn'
-import { MARK_BOLD, MARK_CODE, MARK_ITALIC, MARK_STRIKETHROUGH, createBoldPlugin, createCodePlugin, createItalicPlugin, createStrikethroughPlugin } from '@udecode/plate-basic-marks'
+import { MARK_BOLD, MARK_CODE, MARK_ITALIC, MARK_STRIKETHROUGH, MARK_SUBSCRIPT, MARK_SUPERSCRIPT, createBoldPlugin, createCodePlugin, createItalicPlugin, createStrikethroughPlugin, createSubscriptPlugin, createSuperscriptPlugin } from '@udecode/plate-basic-marks'
 import { ELEMENT_BLOCKQUOTE, createBlockquotePlugin } from '@udecode/plate-block-quote'
 import { ELEMENT_LI, ELEMENT_OL, ELEMENT_TODO_LI, ELEMENT_UL, createListPlugin, createTodoListPlugin } from '@udecode/plate-list'
 import { ELEMENT_HR, createHorizontalRulePlugin } from '@udecode/plate-horizontal-rule'
@@ -27,6 +27,8 @@ import { codeBlockPlugin } from './code-block/plugin'
 import { StrikethroughMark } from './strikethrough/mark'
 import { TodoListElement } from './todo-list/element'
 import { HighlightMark } from './highlight/mark'
+import { SuperscriptMark } from './superscript/mark'
+import { SubscriptMark } from './subscript/mark'
 
 export const plugins = createPlugins([
   createParagraphPlugin(),
@@ -44,6 +46,8 @@ export const plugins = createPlugins([
   createStrikethroughPlugin(),
   createTodoListPlugin(),
   createHighlightPlugin(),
+  createSuperscriptPlugin(),
+  createSubscriptPlugin(),
 ], {
   components: {
     [ELEMENT_PARAGRAPH]: ParagraphElement,
@@ -73,5 +77,7 @@ export const plugins = createPlugins([
     [MARK_STRIKETHROUGH]: StrikethroughMark,
     [ELEMENT_TODO_LI]: TodoListElement,
     [MARK_HIGHLIGHT]: HighlightMark,
+    [MARK_SUPERSCRIPT]: SuperscriptMark,
+    [MARK_SUBSCRIPT]: SubscriptMark,
   },
 })
