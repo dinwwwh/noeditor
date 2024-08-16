@@ -7,7 +7,6 @@ import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
 import remarkFlexibleMarkers from 'remark-flexible-markers'
 import remarkSupersub from 'remark-supersub'
-import rehypeRaw from 'rehype-raw'
 import { plugins } from './plate/plugins'
 import { container } from './app.css'
 import { Editor } from '.'
@@ -87,7 +86,10 @@ X^2^
 <h1 align="right">Should be right aligned</h1>
 <img src="https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png" align="right" />
 
+<no-spacer size="sm"></no-spacer>
 <img src="https://placehold.co/600x400/EEE/31343C" width="100" />
+
+<no-spacer size="lg"></no-spacer>
 <img src="https://placehold.co/600x400/EEE/31343C" style="width: 100px; height: 200px;" align="center" />
 `
 
@@ -98,8 +100,7 @@ const html = await unified()
   .use(remarkFlexibleMarkers)
   .use(remarkSupersub)
   .use(remarkRehype, { allowDangerousHtml: true })
-  .use(rehypeRaw)
-  .use(rehypeStringify)
+  .use(rehypeStringify, { allowDangerousHtml: true })
   .process(markdown)
 // eslint-disable-next-line no-console
 console.log(html.toString())

@@ -31,6 +31,8 @@ import { SuperscriptMark } from './superscript/mark'
 import { SubscriptMark } from './subscript/mark'
 import { alignPlugin } from './align/plugin'
 import { imagePlugin } from './image/plugin'
+import { ELEMENT_SPACER, createSpacerPlugin } from './spacer/plugin'
+import { SpacerElement } from './spacer/element'
 
 export const plugins = createPlugins([
   createParagraphPlugin(),
@@ -51,6 +53,7 @@ export const plugins = createPlugins([
   createSuperscriptPlugin(),
   createSubscriptPlugin(),
   alignPlugin,
+  createSpacerPlugin(),
 ], {
   components: {
     [ELEMENT_PARAGRAPH]: ParagraphElement,
@@ -82,5 +85,6 @@ export const plugins = createPlugins([
     [MARK_HIGHLIGHT]: HighlightMark,
     [MARK_SUPERSCRIPT]: SuperscriptMark,
     [MARK_SUBSCRIPT]: SubscriptMark,
+    [ELEMENT_SPACER]: SpacerElement,
   },
 })

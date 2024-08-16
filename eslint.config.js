@@ -8,6 +8,7 @@ export default antfu(
   {
     rules: {
       'react/prefer-destructuring-assignment': ['off'],
+      'unicorn/prefer-includes': ['off'],
     },
   },
   {
