@@ -134,12 +134,12 @@ Best regards,
 
 
 Noeditor!
-<br />
+<br size=".8rem" />
 
 ---
 <img src="https://dinwwwh.com/d-avatar.png" width="40" />
 `
-  .replace(/<br\s+(size[="a-z]*)\s*\/?>/g, (_, size) => `<no-spacer ${size}></no-spacer>`)
+  .replace(/<br\s+(size[="'a-zA-Z0-9.]*)\s*\/?>/g, (_, size) => `<no-spacer ${size}></no-spacer>`)
 
 const editor = createPlateEditor({ plugins })
 const html = await unified()

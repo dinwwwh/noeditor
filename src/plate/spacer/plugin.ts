@@ -1,12 +1,13 @@
 import { createPluginFactory } from '@udecode/plate-common'
+import { isCssUnit } from '@/utils'
 
 export const ELEMENT_SPACER = 'spacer'
 
-const validSize = ['sm', 'md', 'lg', 'xl'] as const
+export const buildInSizes = ['sm', 'md', 'lg', 'xl'] as const
 
 export interface SpacerElementState {
   type: typeof ELEMENT_SPACER
-  size: typeof validSize[number]
+  size: string
 }
 
 export const createSpacerPlugin = createPluginFactory({
@@ -18,7 +19,8 @@ export const createSpacerPlugin = createPluginFactory({
       validNodeName: 'NO-SPACER',
     }],
     getNode(el) {
-      const size = validSize.find(s => s === el.getAttribute('size')) ?? 'md'
+      const rawSize = el.getAttribute('size') ?? el.getAttribute('data-size')
+      const size = buildInSizes.find(s => s === rawSize) ?? (rawSize && isCssUnit(rawSize) ? rawSize : 'md')
 
       return {
         size,

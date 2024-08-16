@@ -1,8 +1,9 @@
 import { PlateElement } from '@udecode/plate-common'
 import { useSelected } from 'slate-react'
 import { forwardRef } from 'react'
-import type { SpacerElementState } from './plugin'
+import { type SpacerElementState, buildInSizes } from './plugin'
 import { spacer } from './element.css'
+import { addMissingCssUnit } from '@/utils'
 
 export const SpacerElement = forwardRef(
   (
@@ -11,12 +12,14 @@ export const SpacerElement = forwardRef(
   ) => {
     const { size } = props.element as unknown as SpacerElementState
     const selected = useSelected()
+    const sizeAsBuildIn = buildInSizes.find(s => s === size)
 
     return (
       <PlateElement
         {...props}
         ref={ref}
-        className={`${spacer({ size, selected })} ${props.className}`}
+        className={`${spacer({ size: sizeAsBuildIn, selected })} ${props.className}`}
+        style={{ ...props.style, height: !sizeAsBuildIn ? addMissingCssUnit(size) : undefined }}
       >
         {props.children}
       </PlateElement>
