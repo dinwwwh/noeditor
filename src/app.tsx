@@ -11,7 +11,7 @@ import { plugins } from './plate/plugins'
 import { container } from './app.css'
 import { Editor } from '.'
 
-export const _markdown_cheat_sheet = `
+const _markdown_cheat_sheet = `
 paragraph: lorem ipsum
 
 # H1
@@ -106,42 +106,40 @@ X^2^
 normal
 `
 
-export const _markdown_email = `
+const _markdown_email = `
 <img src="https://dinwwwh.com/d-avatar.png" width="40" />
 
 ---
+<br size="md" />
 
-<no-spacer size="md"></no-spacer>
 Dear Dinwwwh,
+<br />
 
-<no-spacer size="lg"></no-spacer>
 Are you looking to simplify your email writing process? Introducing a revolutionary approach that allows you to create compelling emails with ease.
+<br />
 
-<no-spacer size="sm"></no-spacer>
 Transform your email communication today! Here's what you can expect:
 - Streamlined writing experience
 - Intuitive interface
 - Time-saving features
-
-<no-spacer size="lg"></no-spacer>
-
+<br />
 We're building a community of users passionate about efficient communication. Join us in shaping the future of email composition.
 Ready to try it out? Click here to get started: [Link](https://dinwwwh.com)
-
-<no-spacer size="sm"></no-spacer>
+<br />
 We look forward to helping you enhance your email writing experience.
 
-<no-spacer size="sm"></no-spacer>
+<br />
+
 Best regards,
 
-Noeditor!
 
-<no-spacer size="md"></no-spacer>
+Noeditor!
+<br />
 
 ---
-
 <img src="https://dinwwwh.com/d-avatar.png" width="40" />
 `
+  .replace(/<br\s+(size[="a-z]*)\s*\/?>/g, (_, size) => `<no-spacer ${size}></no-spacer>`)
 
 const editor = createPlateEditor({ plugins })
 const html = await unified()
