@@ -91,6 +91,12 @@ X^2^
 
 <no-spacer size="lg"></no-spacer>
 <img src="https://placehold.co/600x400/EEE/31343C" style="width: 100px; height: 200px;" align="center" />
+
+<button align="justify" href="https://www.example.com">Justify with href</button>
+<button align="left" size="sm">left size=sm</button>
+<button align="right">right</button>
+<button align="center" square>center square</button>
+<button size="sm">Default align size=sm</button>
 `
 
 const editor = createPlateEditor({ plugins })

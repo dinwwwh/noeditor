@@ -33,6 +33,8 @@ import { alignPlugin } from './align/plugin'
 import { imagePlugin } from './image/plugin'
 import { ELEMENT_SPACER, createSpacerPlugin } from './spacer/plugin'
 import { SpacerElement } from './spacer/element'
+import { ELEMENT_BUTTON, createButtonPlugin } from './button/plugin'
+import { ButtonElement } from './button/element'
 
 export const plugins = createPlugins([
   createParagraphPlugin(),
@@ -54,6 +56,7 @@ export const plugins = createPlugins([
   createSubscriptPlugin(),
   alignPlugin,
   createSpacerPlugin(),
+  createButtonPlugin(),
 ], {
   components: {
     [ELEMENT_PARAGRAPH]: ParagraphElement,
@@ -86,5 +89,6 @@ export const plugins = createPlugins([
     [MARK_SUPERSCRIPT]: SuperscriptMark,
     [MARK_SUBSCRIPT]: SubscriptMark,
     [ELEMENT_SPACER]: SpacerElement,
+    [ELEMENT_BUTTON]: ButtonElement,
   },
 })

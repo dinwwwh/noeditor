@@ -1,12 +1,12 @@
 import { createPluginFactory } from '@udecode/plate-common'
 
-export const ELEMENT_SPACER = 'spacer' as const
+export const ELEMENT_SPACER = 'spacer'
 
 const validSize = ['sm', 'md', 'lg', 'xl'] as const
 
 export interface SpacerElementState {
   type: typeof ELEMENT_SPACER
-  size: 'sm' | 'md' | 'lg' | 'xl'
+  size: typeof validSize[number]
 }
 
 export const createSpacerPlugin = createPluginFactory({
@@ -14,16 +14,16 @@ export const createSpacerPlugin = createPluginFactory({
   isElement: true,
   isVoid: true,
   deserializeHtml: {
-    query(el) {
-      return el.tagName === 'NO-SPACER' || el.getAttribute('as')?.toLowerCase() === ELEMENT_SPACER
-    },
+    rules: [{
+      validNodeName: 'NO-SPACER',
+    }],
     getNode(el) {
-      const size = el.getAttribute('size')
+      const size = validSize.find(s => s === el.getAttribute('size')) ?? 'md'
 
       return {
-        size: validSize.some(h => h === size) ? size : 'md',
+        size,
         type: ELEMENT_SPACER,
-      }
+      } satisfies SpacerElementState
     },
   },
 })
