@@ -29,6 +29,7 @@ import { TodoListElement } from './todo-list/element'
 import { HighlightMark } from './highlight/mark'
 import { SuperscriptMark } from './superscript/mark'
 import { SubscriptMark } from './subscript/mark'
+import { alignPlugin } from './align/plugin'
 
 export const plugins = createPlugins([
   createParagraphPlugin(),
@@ -48,6 +49,7 @@ export const plugins = createPlugins([
   createHighlightPlugin(),
   createSuperscriptPlugin(),
   createSubscriptPlugin(),
+  alignPlugin,
 ], {
   components: {
     [ELEMENT_PARAGRAPH]: ParagraphElement,

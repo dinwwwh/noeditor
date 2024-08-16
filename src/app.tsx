@@ -7,6 +7,7 @@ import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
 import remarkFlexibleMarkers from 'remark-flexible-markers'
 import remarkSupersub from 'remark-supersub'
+import rehypeRaw from 'rehype-raw'
 import { plugins } from './plate/plugins'
 import { container } from './app.css'
 import { Editor } from '.'
@@ -82,6 +83,9 @@ H~2~O
 
 X^2^
 
+<h1 style="text-align: center">Should be centered</h1>
+<h1 align="right">Should be right aligned</h1>
+<img src="https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png" align="right" />
 `
 
 const editor = createPlateEditor({ plugins })
@@ -90,9 +94,12 @@ const html = await unified()
   .use(remarkGfm, { singleTilde: false })
   .use(remarkFlexibleMarkers)
   .use(remarkSupersub)
-  .use(remarkRehype)
+  .use(remarkRehype, { allowDangerousHtml: true })
+  .use(rehypeRaw)
   .use(rehypeStringify)
   .process(markdown)
+// eslint-disable-next-line no-console
+console.log(html.toString())
 const initialValue = deserializeHtml(editor, { element: html.toString() }) as TElement[]
 
 export function App() {
