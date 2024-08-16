@@ -1,7 +1,7 @@
-import { rem, style } from '@fizzui/styles'
+import { rem, style, vars } from '@fizzui/styles'
 
 export const link = style({
-  color: 'inherit',
+  color: vars.fg.base[900],
   fontWeight: 500,
   textDecoration: 'underline',
   textUnderlineOffset: rem(4),

@@ -1,6 +1,10 @@
-import { recipe, rem } from '@fizzui/styles'
+import { recipe, rem, vars } from '@fizzui/styles'
 
 export const heading = recipe({
+  base: {
+    color: vars.fg.base[900],
+  },
+
   variants: {
     variant: {
       h1: {
