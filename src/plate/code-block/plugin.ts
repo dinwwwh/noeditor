@@ -10,7 +10,9 @@ export const codeBlockPlugin = createCodeBlockPlugin({
       const lang: string | null = node.lang || (() => {
         const codeEl = el.querySelector('code')
 
-        if (!codeEl) { return }
+        if (!codeEl) {
+          return
+        }
 
         const className = codeEl.className
         const match = className.match(/language-(\w+)/)

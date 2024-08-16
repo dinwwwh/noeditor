@@ -1,4 +1,4 @@
-import { recipe, rem, select, style, vars } from '@fizzui/styles'
+import { recipe, rem, style, vars } from '@fizzui/styles'
 
 export const hrWrapper = recipe({
   base: {
