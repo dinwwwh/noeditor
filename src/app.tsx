@@ -86,6 +86,9 @@ X^2^
 <h1 style="text-align: center">Should be centered</h1>
 <h1 align="right">Should be right aligned</h1>
 <img src="https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png" align="right" />
+
+<img src="https://placehold.co/600x400/EEE/31343C" width="100" />
+<img src="https://placehold.co/600x400/EEE/31343C" style="width: 100px; height: 200px;" align="center" />
 `
 
 const editor = createPlateEditor({ plugins })

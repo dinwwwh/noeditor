@@ -30,6 +30,7 @@ import { HighlightMark } from './highlight/mark'
 import { SuperscriptMark } from './superscript/mark'
 import { SubscriptMark } from './subscript/mark'
 import { alignPlugin } from './align/plugin'
+import { imagePlugin } from './image/plugin'
 
 export const plugins = createPlugins([
   createParagraphPlugin(),
@@ -41,7 +42,7 @@ export const plugins = createPlugins([
   createCodePlugin(),
   createHorizontalRulePlugin(),
   createLinkPlugin(),
-  createImagePlugin(),
+  imagePlugin,
   createTablePlugin(),
   codeBlockPlugin,
   createStrikethroughPlugin(),

@@ -1,4 +1,4 @@
-import { rem, style } from '@fizzui/styles'
+import { rem, style, vars } from '@fizzui/styles'
 
 export const imageWrapper = style({
   marginTop: rem(4),
@@ -10,4 +10,5 @@ export const image = style({
   height: 'auto',
   objectFit: 'cover',
   objectPosition: 'center',
+  borderRadius: vars.radius.md,
 })
