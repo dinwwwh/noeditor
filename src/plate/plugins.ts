@@ -7,7 +7,7 @@ import { ELEMENT_BLOCKQUOTE, createBlockquotePlugin } from '@udecode/plate-block
 import { ELEMENT_LI, ELEMENT_OL, ELEMENT_TODO_LI, ELEMENT_UL, createListPlugin, createTodoListPlugin } from '@udecode/plate-list'
 import { ELEMENT_HR, createHorizontalRulePlugin } from '@udecode/plate-horizontal-rule'
 import { ELEMENT_LINK, createLinkPlugin } from '@udecode/plate-link'
-import { ELEMENT_IMAGE, createImagePlugin } from '@udecode/plate-media'
+import { ELEMENT_IMAGE } from '@udecode/plate-media'
 import { ELEMENT_TABLE, ELEMENT_TD, ELEMENT_TH, ELEMENT_TR, createTablePlugin } from '@udecode/plate-table'
 import { ELEMENT_CODE_BLOCK, ELEMENT_CODE_LINE, ELEMENT_CODE_SYNTAX } from '@udecode/plate-code-block'
 import { MARK_HIGHLIGHT, createHighlightPlugin } from '@udecode/plate-highlight'
@@ -35,6 +35,8 @@ import { ELEMENT_SPACER, createSpacerPlugin } from './spacer/plugin'
 import { SpacerElement } from './spacer/element'
 import { ELEMENT_BUTTON, createButtonPlugin } from './button/plugin'
 import { ButtonElement } from './button/element'
+import { ELEMENT_RAW_HTML, createRawHtmlPlugin } from './raw-html/plugin'
+import { RawHtmlElement } from './raw-html/element'
 
 export const plugins = createPlugins([
   createParagraphPlugin(),
@@ -57,6 +59,7 @@ export const plugins = createPlugins([
   alignPlugin,
   createSpacerPlugin(),
   createButtonPlugin(),
+  createRawHtmlPlugin(),
 ], {
   components: {
     [ELEMENT_PARAGRAPH]: ParagraphElement,
@@ -90,5 +93,6 @@ export const plugins = createPlugins([
     [MARK_SUBSCRIPT]: SubscriptMark,
     [ELEMENT_SPACER]: SpacerElement,
     [ELEMENT_BUTTON]: ButtonElement,
+    [ELEMENT_RAW_HTML]: RawHtmlElement,
   },
 })

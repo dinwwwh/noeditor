@@ -97,6 +97,13 @@ X^2^
 <button align="right">right</button>
 <button align="center" square>center square</button>
 <button size="sm">Default align size=sm</button>
+
+<no-rawhtml>
+<h1 style="color:blue;">A Blue Heading</h1>
+<p style="color:red;">A red paragraph.</p>
+</no-rawhtml>
+
+normal
 `
 
 const editor = createPlateEditor({ plugins })
