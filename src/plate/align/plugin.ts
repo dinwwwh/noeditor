@@ -26,7 +26,7 @@ export const alignPlugin = createAlignPlugin({
     return mapInjectPropsToPlugin(editor, plugin, {
       deserializeHtml: {
         getNode: (el, node) => {
-          const align = el.style.textAlign || el.getAttribute('align')
+          const align = el.style.textAlign || el.getAttribute('align') || el.getAttribute('data-align')
 
           if (align) {
             node[plugin.key] = align
