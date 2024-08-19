@@ -1,6 +1,6 @@
 import { forwardRef } from 'react'
 import { PlateElement } from '@udecode/plate-common'
-import { blockquote } from './element.css'
+import { blockquote, blockquoteWrapper } from './element.css'
 
 export const BlockquoteElement = forwardRef(
   ({ children, className, ...props }: React.ComponentPropsWithoutRef<typeof PlateElement>, ref: React.ElementRef<typeof PlateElement>) => {
@@ -8,10 +8,9 @@ export const BlockquoteElement = forwardRef(
       <PlateElement
         {...props}
         ref={ref}
-        className={`${blockquote} ${className}`}
-        asChild
+        className={`${blockquoteWrapper} ${className}`}
       >
-        <blockquote>{children}</blockquote>
+        <blockquote className={`${blockquote}`}>{children}</blockquote>
       </PlateElement>
     )
   },
