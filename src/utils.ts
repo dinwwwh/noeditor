@@ -13,3 +13,7 @@ export function isCssUnit(value: string): boolean {
 export function hasUnit(value: string): boolean {
   return /[a-z]{1,9}$/i.test(value)
 }
+
+export function getFaviconUrl(domain: string, size = 64): string {
+  return `https://www.google.com/s2/favicons?domain=${domain}&sz=${size}`
+}

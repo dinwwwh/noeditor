@@ -5,4 +5,5 @@ export const link = style({
   fontWeight: 500,
   textDecoration: 'underline',
   textUnderlineOffset: rem(4),
+  lineHeight: rem(20),
 })
