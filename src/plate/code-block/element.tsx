@@ -1,8 +1,8 @@
 import { PlateElement, PlateLeaf } from '@udecode/plate-common'
 import { forwardRef } from 'react'
 import { useCodeSyntaxLeaf } from '@udecode/plate-code-block'
-import { codeBlock, codeBlockWrapper } from './element.css.ts'
-import { prismRoot } from './prism.css.ts'
+import { codeBlock, codeBlockWrapper } from './element.css'
+import { prismRoot } from './prism.css'
 
 export const CodeBlockElement = forwardRef(
   (

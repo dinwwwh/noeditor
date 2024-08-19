@@ -19,6 +19,7 @@
 
     /* Linting */
     "strict": true,
+    "declarationMap": true,
     "isolatedModules": true,
     "skipLibCheck": true
   },
