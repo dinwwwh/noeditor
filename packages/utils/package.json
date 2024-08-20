@@ -1,0 +1,38 @@
+{
+  "name": "@noeditor/utils",
+  "type": "module",
+  "version": "0.0.0",
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "type:check": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@udecode/plate-common": "^36.3.7",
+    "rehype-stringify": "^10.0.0",
+    "remark": "^15.0.1",
+    "remark-flexible-markers": "^1.2.1",
+    "remark-gfm": "^4.0.0",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.0",
+    "remark-stringify": "^11.0.0",
+    "remark-supersub": "^1.0.0",
+    "unified": "^11.0.5"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "vite": "^5.4.1",
+    "vite-plugin-dts": "^4.0.3"
+  }
+}

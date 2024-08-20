@@ -1,12 +1,6 @@
-import { type TElement, createPlateEditor, deserializeHtml } from '@udecode/plate-common'
+import { type TElement, createPlateEditor } from '@udecode/plate-common'
 import { useEffect, useState } from 'react'
-import { unified } from 'unified'
-import rehypeStringify from 'rehype-stringify'
-import remarkGfm from 'remark-gfm'
-import remarkParse from 'remark-parse'
-import remarkRehype from 'remark-rehype'
-import remarkFlexibleMarkers from 'remark-flexible-markers'
-import remarkSupersub from 'remark-supersub'
+import { markdownToFragments } from '@noeditor/utils'
 import { Editor, plugins } from '@noeditor/editor'
 import { container } from './app.css'
 
@@ -88,7 +82,7 @@ X^2^
 <no-spacer size="sm"></no-spacer>
 <img src="https://placehold.co/600x400/EEE/31343C" width="100" />
 
-<no-spacer size="lg"></no-spacer>
+<no-spacer size="lg" />
 <img src="https://placehold.co/600x400/EEE/31343C" style="width: 100px; height: 200px;" align="center" />
 
 <button align="justify" href="https://www.example.com">Justify with href</button>
@@ -152,17 +146,7 @@ Noeditor!
   .replace(/<br\s+(size[="'a-zA-Z0-9.]*)\s*\/?>/g, (_, size) => `<no-spacer ${size}></no-spacer>`)
 
 const editor = createPlateEditor({ plugins })
-const html = await unified()
-  .use(remarkParse)
-  .use(remarkGfm, { singleTilde: false })
-  .use(remarkFlexibleMarkers)
-  .use(remarkSupersub)
-  .use(remarkRehype, { allowDangerousHtml: true })
-  .use(rehypeStringify, { allowDangerousHtml: true })
-  .process(_markdown_cheat_sheet)
-// eslint-disable-next-line no-console
-console.log(html.toString())
-const initialValue = deserializeHtml(editor, { element: html.toString() }) as TElement[]
+const initialValue = markdownToFragments(editor, _markdown_cheat_sheet)
 
 export function App() {
   const [value, setValue] = useState<TElement[] | undefined>()
