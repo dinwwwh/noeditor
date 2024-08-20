@@ -7,9 +7,8 @@ import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
 import remarkFlexibleMarkers from 'remark-flexible-markers'
 import remarkSupersub from 'remark-supersub'
-import { plugins } from './plate/plugins'
+import { Editor, plugins } from '@noeditor/editor'
 import { container } from './app.css'
-import { Editor } from '.'
 
 const _markdown_cheat_sheet = `
 paragraph: lorem ipsum

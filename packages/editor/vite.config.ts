@@ -26,7 +26,7 @@ export default defineConfig({
       compilerOptions: {
         types: ['vite/client'],
       },
-      exclude: ['**/*.test.*', '**/__tests__/**', 'src/app.{tsx,css.ts}', 'src/main.{tsx,css.ts}'],
+      exclude: ['**/*.test.*', '**/__tests__/**'],
     }),
     vanillaExtractPlugin(),
     react(),
