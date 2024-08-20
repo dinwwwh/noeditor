@@ -3,7 +3,7 @@ import { forwardRef } from 'react'
 import { match } from 'ts-pattern'
 import type { MediaEmbedState } from './plugin'
 import { favicon, mediaEmbed, mediaEmbedWrapper, unknownMediaEmbed, unknownMediaEmbedContent, unknownMediaEmbedLink, unknownMediaEmbedTitle, youtubeThumbnail } from './element.css'
-import { addMissingCssUnit, getFaviconUrl } from '@/utils'
+import { addMissingCssUnit, getFaviconUrl } from '@editor/utils'
 
 export const MediaEmbedElement = forwardRef(
   (

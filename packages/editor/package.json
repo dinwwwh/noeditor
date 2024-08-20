@@ -1,0 +1,105 @@
+{
+  "name": "@noeditor/editor",
+  "type": "module",
+  "version": "0.0.0",
+  "author": {
+    "name": "dinwwwh",
+    "email": "dinwwwh@gmail.com",
+    "url": "https://dinwwwh.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/dinwwwh/fizzui",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dinwwwh/fizzui.git",
+    "directory": "."
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "dinwwwh",
+    "noeditor",
+    "notion like editor",
+    "react editor",
+    "slate editor",
+    "plate editor",
+    "slate react",
+    "notion editor",
+    "notion like editor",
+    "react notion editor",
+    "react notion like editor",
+    "react slate editor",
+    "react slate react editor",
+    "slate react editor"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./css": "./dist/style.css"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "type:check": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "dependencies": {
+    "@fizzui/styles": "^0.0.5",
+    "@radix-ui/react-checkbox": "^1.1.1",
+    "@tabler/icons-react": "^3.12.0",
+    "@udecode/cn": "^33.0.0",
+    "@udecode/plate-alignment": "^36.0.11",
+    "@udecode/plate-basic-marks": "^36.0.0",
+    "@udecode/plate-block-quote": "^36.0.0",
+    "@udecode/plate-code-block": "^36.0.0",
+    "@udecode/plate-common": "^36.3.7",
+    "@udecode/plate-heading": "^36.0.12",
+    "@udecode/plate-highlight": "^36.0.0",
+    "@udecode/plate-horizontal-rule": "^36.0.0",
+    "@udecode/plate-link": "^36.3.8",
+    "@udecode/plate-list": "^36.0.0",
+    "@udecode/plate-media": "^36.2.2",
+    "@udecode/plate-paragraph": "^36.0.0",
+    "@udecode/plate-serializer-html": "^36.0.0",
+    "@udecode/plate-table": "^36.3.8",
+    "@vanilla-extract/css": "^1.15.3",
+    "@vanilla-extract/recipes": "^0.5.3",
+    "prismjs": "^1.29.0",
+    "slate-react": "^0.108.0",
+    "ts-pattern": "^5.3.1"
+  },
+  "devDependencies": {
+    "@fontsource-variable/inter": "^5.0.20",
+    "@fontsource-variable/jetbrains-mono": "^5.0.21",
+    "@types/node": "^20.14.15",
+    "@types/prismjs": "^1.26.4",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vanilla-extract/vite-plugin": "^4.0.13",
+    "@vitejs/plugin-react-swc": "^3.7.0",
+    "rehype-stringify": "^10.0.0",
+    "remark": "^15.0.1",
+    "remark-flexible-markers": "^1.2.1",
+    "remark-gfm": "^4.0.0",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.0",
+    "remark-stringify": "^11.0.0",
+    "remark-supersub": "^1.0.0",
+    "typescript": "^5.5.4",
+    "unified": "^11.0.5",
+    "vite": "^5.4.0",
+    "vite-plugin-dts": "^4.0.3"
+  }
+}

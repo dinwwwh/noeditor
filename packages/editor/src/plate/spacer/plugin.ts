@@ -1,5 +1,5 @@
 import { createPluginFactory } from '@udecode/plate-common'
-import { isCssUnit } from '@/utils'
+import { isCssUnit } from '@editor/utils'
 
 export const ELEMENT_SPACER = 'spacer'
 

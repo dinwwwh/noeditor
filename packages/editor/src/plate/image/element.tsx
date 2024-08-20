@@ -2,7 +2,7 @@ import { PlateElement } from '@udecode/plate-common'
 import { forwardRef } from 'react'
 import { Image } from '@udecode/plate-media'
 import { image, imageWrapper } from './element.css'
-import { addMissingCssUnit } from '@/utils'
+import { addMissingCssUnit } from '@editor/utils'
 
 export const ImageElement = forwardRef(
   (

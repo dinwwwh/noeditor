@@ -9,11 +9,6 @@ export default antfu(
     rules: {
       'react/prefer-destructuring-assignment': ['off'],
       'unicorn/prefer-includes': ['off'],
-    },
-  },
-  {
-    files: ['src/**/*.css.ts'],
-    rules: {
       'no-restricted-imports': ['error', {
         name: '@vanilla-extract/recipes',
         importNames: ['recipe'],

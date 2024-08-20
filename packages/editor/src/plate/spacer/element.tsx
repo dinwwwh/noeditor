@@ -3,7 +3,7 @@ import { useSelected } from 'slate-react'
 import { forwardRef } from 'react'
 import { type SpacerElementState, buildInSizes } from './plugin'
 import { spacer } from './element.css'
-import { addMissingCssUnit } from '@/utils'
+import { addMissingCssUnit } from '@editor/utils'
 
 export const SpacerElement = forwardRef(
   (

@@ -12,7 +12,7 @@
     /* Bundler mode */
     "moduleResolution": "bundler",
     "paths": {
-      "@/*": ["./src/*"]
+      "@editor/*": ["./src/*"]
     },
     "resolveJsonModule": true,
     "types": ["vite/client"],

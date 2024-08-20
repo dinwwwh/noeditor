@@ -8,7 +8,7 @@ import pkg from './package.json'
 export default defineConfig({
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      '@editor': path.resolve(__dirname, './src'),
     },
   },
   build: {
