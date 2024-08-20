@@ -8,10 +8,10 @@
     "url": "https://dinwwwh.com"
   },
   "license": "MIT",
-  "homepage": "https://github.com/dinwwwh/fizzui",
+  "homepage": "https://github.com/dinwwwh/noeditor",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dinwwwh/fizzui.git",
+    "url": "https://github.com/dinwwwh/noeditor.git",
     "directory": "."
   },
   "publishConfig": {

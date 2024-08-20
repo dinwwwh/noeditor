@@ -2,6 +2,37 @@
   "name": "@noeditor/utils",
   "type": "module",
   "version": "0.0.0",
+  "author": {
+    "name": "dinwwwh",
+    "email": "dinwwwh@gmail.com",
+    "url": "https://dinwwwh.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/dinwwwh/noeditor",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dinwwwh/noeditor.git",
+    "directory": "packages/utils"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "dinwwwh",
+    "noeditor",
+    "notion like editor",
+    "react editor",
+    "slate editor",
+    "plate editor",
+    "slate react",
+    "notion editor",
+    "notion like editor",
+    "react notion editor",
+    "react notion like editor",
+    "react slate editor",
+    "react slate react editor",
+    "slate react editor"
+  ],
   "exports": {
     ".": {
       "types": "./dist/src/index.d.ts",
