@@ -1,27 +1,10 @@
 {
+  "extends": "@dinwwwh/tsconfig/react.json",
   "compilerOptions": {
-    "composite": true,
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
-    "target": "ES2020",
-    "jsx": "react-jsx",
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "moduleDetection": "force",
-    "useDefineForClassFields": true,
-    "module": "ESNext",
-
-    /* Bundler mode */
-    "moduleResolution": "bundler",
     "paths": {
-      "@utils/*": ["./src/*"]
+      "@email/*": ["./src/*"]
     },
-    "resolveJsonModule": true,
-    "types": ["vite/client"],
-
-    /* Linting */
-    "strict": true,
-    "declarationMap": true,
-    "isolatedModules": true,
-    "skipLibCheck": true
+    "types": ["vite/client"]
   },
   "include": ["src"]
 }

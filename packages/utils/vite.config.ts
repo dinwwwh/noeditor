@@ -1,30 +1,29 @@
 import path from 'node:path'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
-import pkg from './package.json'
+import tsconfigPaths from 'vite-tsconfig-paths'
 
+// https://vitejs.dev/config/
 export default defineConfig({
-  resolve: {
-    alias: {
-      '@utils': path.resolve(__dirname, './src'),
-    },
+  ssr: {
+    noExternal: [], // Packages that should be bundled
   },
   build: {
+    ssr: true, // Prevent bundle all dependencies (except linked dependencies, and above noExternal list) and make it usable in node.js
     target: 'es2022',
     lib: {
-      entry: ['src/index.ts'],
+      entry: [path.resolve(__dirname, './src/index.ts')],
       formats: ['es'],
-    },
-    rollupOptions: {
-      external: [...Object.keys((pkg as any).dependencies || {}), ...Object.keys((pkg as any).peerDependencies || {})],
     },
   },
   plugins: [
+    tsconfigPaths(),
     dts({
       compilerOptions: {
+        baseUrl: '.', // This will help dts resolve alias imports
         types: ['vite/client'],
       },
-      exclude: ['**/*.test.*', '**/__tests__/**'],
+      exclude: ['**/*.test.*', '**/*.spec.*', 'test', '**/__tests__/**'],
     }),
   ],
 })
