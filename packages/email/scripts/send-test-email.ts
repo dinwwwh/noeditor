@@ -3,7 +3,7 @@
 import './_dom-polyfill'
 
 import nodemailer from 'nodemailer'
-import { markdownToEmailHtml } from '../src/markdown-to-email-html'
+import { convertMarkdownToEmailStyledHtml } from '@email/markdown'
 
 const transporter = nodemailer.createTransport({
   host: import.meta.env.VITE_EMAIL_HOST,
@@ -125,5 +125,5 @@ await transporter.sendMail({
   to: 'bar@example.com, baz@example.com', // list of receivers
   subject: 'Hello ✔', // Subject line
   text: 'Hello world?', // plain text body
-  html: markdownToEmailHtml(_markdown_cheat_sheet),
+  html: convertMarkdownToEmailStyledHtml(_markdown_cheat_sheet),
 })

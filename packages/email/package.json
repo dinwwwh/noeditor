@@ -1,7 +1,7 @@
 {
-  "name": "@noeditor/utils",
+  "name": "@noeditor/email",
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.0.0",
   "author": {
     "name": "dinwwwh",
     "email": "dinwwwh@gmail.com",
@@ -12,7 +12,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/dinwwwh/noeditor.git",
-    "directory": "packages/utils"
+    "directory": "packages/email"
   },
   "publishConfig": {
     "access": "public"

@@ -1,15 +1,14 @@
 import fizzuiCss from '@fizzui/styles/css?raw'
 import noeditorCss from '@noeditor/editor/css?raw'
-import { u } from '@fizzui/styles'
 
-import { Editor, plugins } from '@noeditor/editor'
+import { Editor, deserializeMarkdown, plugins } from '@noeditor/editor'
 import { createPlateEditor } from '@udecode/plate-common'
 import { renderToString } from 'react-dom/server'
 import juice from 'juice'
 import { Preview } from '@react-email/preview'
 import matter from 'gray-matter'
 import { z } from 'zod'
-import { markdownToFragments } from './markdown-to-fragments'
+import { FIXED_STYLES } from './fixed'
 
 const GLOBAL_STYLES = /* css */ `
   body {
@@ -24,28 +23,19 @@ const GLOBAL_STYLES = /* css */ `
   }
 `
 
-const FIXED_FIZZUI_ON_EMAIL = /* css */ `
-  ${classNameToSelectors(u.button.__tree.root.classNames.variants.size.sm)} {
-    line-height: 26px;
-  }
-
-  ${classNameToSelectors(u.button.__tree.root.classNames.variants.size.md)} {
-    line-height: 34px;
-  }
-`
-
 interface Options {
   lang?: string
   dir?: string
+  extraCss?: string
 }
 
 const MARKDOWN_METADATA_SCHEMA = z.object({
   preview: z.coerce.string().optional(),
 })
 
-export function markdownToEmailHtml(markdown: string, options?: Options) {
+export function convertMarkdownToEmailStyledHtml(markdown: string, options?: Options) {
   const editor = createPlateEditor({ plugins })
-  const fragments = markdownToFragments(editor, markdown)
+  const fragments = deserializeMarkdown(editor, markdown)
   const metadata = MARKDOWN_METADATA_SCHEMA.parse(matter(markdown).data)
 
   const html = renderToString(
@@ -62,18 +52,11 @@ export function markdownToEmailHtml(markdown: string, options?: Options) {
     </html>,
   )
 
-  const extraCss = `${fizzuiCss} ${noeditorCss} ${GLOBAL_STYLES} ${FIXED_FIZZUI_ON_EMAIL}`
+  const extraCss = `${fizzuiCss} ${noeditorCss} ${GLOBAL_STYLES} ${FIXED_STYLES} ${options?.extraCss || ''}`
     .replace(
       /([\d.-]+rem)/gi,
       (_, value) => `${Number.parseFloat(value.replace(/rem$/, '')) * 16}px`,
     )
 
   return juice(html, { extraCss, preserveKeyFrames: false })
-}
-
-function classNameToSelectors(className: string): string {
-  return className
-    .split(/\s+/)
-    .map(className => `.${className}`)
-    .join('')
 }
