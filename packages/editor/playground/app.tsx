@@ -1,7 +1,6 @@
 import { type TElement, createPlateEditor } from '@udecode/plate-common'
 import { useEffect, useState } from 'react'
-import { markdownToFragments } from '@noeditor/utils'
-import { Editor, plugins } from '@noeditor/editor'
+import { Editor, deserializeMarkdown, plugins } from '@editor/index'
 import { container } from './app.css'
 
 const _markdown_cheat_sheet = `
@@ -146,7 +145,7 @@ Noeditor!
   .replace(/<br\s+(size[="'a-zA-Z0-9.]*)\s*\/?>/g, (_, size) => `<no-spacer ${size}></no-spacer>`)
 
 const editor = createPlateEditor({ plugins })
-const initialValue = markdownToFragments(editor, _markdown_cheat_sheet)
+const initialValue = deserializeMarkdown(editor, _markdown_cheat_sheet)
 
 export function App() {
   const [value, setValue] = useState<TElement[] | undefined>()

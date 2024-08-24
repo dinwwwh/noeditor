@@ -26,6 +26,7 @@ export default defineConfig({
       compilerOptions: {
         types: ['vite/client'],
       },
+      include: ['src'],
       exclude: ['**/*.test.*', '**/__tests__/**'],
     }),
     vanillaExtractPlugin(),

@@ -27,7 +27,7 @@ export function parseEmbed(element: HTMLElement): EmbedInfo {
   if (youtubeMatch) {
     return {
       type: 'youtube',
-      id: youtubeMatch[1],
+      id: youtubeMatch[1]!,
       title,
     }
   }
@@ -36,7 +36,7 @@ export function parseEmbed(element: HTMLElement): EmbedInfo {
   if (vimeoMatch) {
     return {
       type: 'vimeo',
-      id: vimeoMatch[1],
+      id: vimeoMatch[1]!,
       title,
     }
   }
