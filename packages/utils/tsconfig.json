@@ -1,5 +1,5 @@
 {
-  "extends": "@dinwwwh/tsconfig/react.json",
+  "extends": "@dinwwwh/tsconfig/react-lib.json",
   "compilerOptions": {
     "paths": {
       "@email/*": ["./src/*"]
