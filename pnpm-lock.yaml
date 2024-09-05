@@ -23,9 +23,6 @@ importers:
       eslint-plugin-react-refresh:
         specifier: ^0.4.7
         version: 0.4.9(eslint@9.9.0)
-      turbo:
-        specifier: latest
-        version: 2.0.14
 
   packages/editor:
     dependencies:
@@ -160,7 +157,7 @@ importers:
         specifier: ^4.0.3
         version: 4.0.3(@types/node@22.4.1)(rollup@4.21.0)(typescript@5.5.4)(vite@5.4.1(@types/node@22.4.1))
 
-  packages/utils:
+  packages/email:
     dependencies:
       '@fizzui/styles':
         specifier: ^0.0.5
@@ -243,16 +240,16 @@ importers:
         version: 5.5.4
       vite:
         specifier: ^5.4.1
-        version: 5.4.1(@types/node@22.4.1)
+        version: 5.4.2(@types/node@22.4.1)
       vite-node:
         specifier: ^2.0.5
         version: 2.0.5(@types/node@22.4.1)
       vite-plugin-dts:
         specifier: ^4.0.3
-        version: 4.0.3(@types/node@22.4.1)(rollup@4.21.0)(typescript@5.5.4)(vite@5.4.1(@types/node@22.4.1))
+        version: 4.0.3(@types/node@22.4.1)(rollup@4.21.0)(typescript@5.5.4)(vite@5.4.2(@types/node@22.4.1))
       vite-tsconfig-paths:
         specifier: latest
-        version: 5.0.1(typescript@5.5.4)(vite@5.4.1(@types/node@22.4.1))
+        version: 5.0.1(typescript@5.5.4)(vite@5.4.2(@types/node@22.4.1))
 
 packages:
 
@@ -3414,40 +3411,6 @@ packages:
 
   tslib@2.6.3:
     resolution: {integrity: sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==}
-
-  turbo-darwin-64@2.0.14:
-    resolution: {integrity: sha512-kwfDmjNwlNfvtrvT29+ZBg5n1Wvxl891bFHchMJyzMoR0HOE9N1NSNdSZb9wG3e7sYNIu4uDkNk+VBEqJW0HzQ==}
-    cpu: [x64]
-    os: [darwin]
-
-  turbo-darwin-arm64@2.0.14:
-    resolution: {integrity: sha512-m3LXYEshCx3wc4ZClM6gb01KYpFmtjQ9IBF3A7ofjb6ahux3xlYZJZ3uFCLAGHuvGLuJ3htfiPbwlDPTdknqqw==}
-    cpu: [arm64]
-    os: [darwin]
-
-  turbo-linux-64@2.0.14:
-    resolution: {integrity: sha512-7vBzCPdoTtR92SNn2JMgj1FlMmyonGmpMaQdgAB1OVYtuQ6NVGoh7/lODfaILqXjpvmFSVbpBIDrKOT6EvcprQ==}
-    cpu: [x64]
-    os: [linux]
-
-  turbo-linux-arm64@2.0.14:
-    resolution: {integrity: sha512-jwH+c0bfjpBf26K/tdEFatmnYyXwGROjbr6bZmNcL8R+IkGAc/cglL+OToqJnQZTgZvH7uDGbeSyUo7IsHyjuA==}
-    cpu: [arm64]
-    os: [linux]
-
-  turbo-windows-64@2.0.14:
-    resolution: {integrity: sha512-w9/XwkHSzvLjmioo6cl3S1yRfI6swxsV1j1eJwtl66JM4/pn0H2rBa855R0n7hZnmI6H5ywLt/nLt6Ae8RTDmw==}
-    cpu: [x64]
-    os: [win32]
-
-  turbo-windows-arm64@2.0.14:
-    resolution: {integrity: sha512-XaQlyYk+Rf4xS5XWCo8XCMIpssgGGy8blzLfolN6YBp4baElIWMlkLZHDbGyiFmCbNf9I9gJI64XGRG+LVyyjA==}
-    cpu: [arm64]
-    os: [win32]
-
-  turbo@2.0.14:
-    resolution: {integrity: sha512-00JjdCMD/cpsjP0Izkjcm8Oaor5yUCfDwODtaLb+WyblyadkaDEisGhy3Dbd5az9n+5iLSPiUgf+WjPbns6MRg==}
-    hasBin: true
 
   type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
@@ -7515,33 +7478,6 @@ snapshots:
 
   tslib@2.6.3: {}
 
-  turbo-darwin-64@2.0.14:
-    optional: true
-
-  turbo-darwin-arm64@2.0.14:
-    optional: true
-
-  turbo-linux-64@2.0.14:
-    optional: true
-
-  turbo-linux-arm64@2.0.14:
-    optional: true
-
-  turbo-windows-64@2.0.14:
-    optional: true
-
-  turbo-windows-arm64@2.0.14:
-    optional: true
-
-  turbo@2.0.14:
-    optionalDependencies:
-      turbo-darwin-64: 2.0.14
-      turbo-darwin-arm64: 2.0.14
-      turbo-linux-64: 2.0.14
-      turbo-linux-arm64: 2.0.14
-      turbo-windows-64: 2.0.14
-      turbo-windows-arm64: 2.0.14
-
   type-check@0.4.0:
     dependencies:
       prelude-ls: 1.2.1
@@ -7756,13 +7692,33 @@ snapshots:
       - rollup
       - supports-color
 
-  vite-tsconfig-paths@5.0.1(typescript@5.5.4)(vite@5.4.1(@types/node@22.4.1)):
+  vite-plugin-dts@4.0.3(@types/node@22.4.1)(rollup@4.21.0)(typescript@5.5.4)(vite@5.4.2(@types/node@22.4.1)):
+    dependencies:
+      '@microsoft/api-extractor': 7.47.4(@types/node@22.4.1)
+      '@rollup/pluginutils': 5.1.0(rollup@4.21.0)
+      '@volar/typescript': 2.4.0
+      '@vue/language-core': 2.0.29(typescript@5.5.4)
+      compare-versions: 6.1.1
+      debug: 4.3.6
+      kolorist: 1.8.0
+      local-pkg: 0.5.0
+      magic-string: 0.30.11
+      typescript: 5.5.4
+      vue-tsc: 2.0.29(typescript@5.5.4)
+    optionalDependencies:
+      vite: 5.4.2(@types/node@22.4.1)
+    transitivePeerDependencies:
+      - '@types/node'
+      - rollup
+      - supports-color
+
+  vite-tsconfig-paths@5.0.1(typescript@5.5.4)(vite@5.4.2(@types/node@22.4.1)):
     dependencies:
       debug: 4.3.6
       globrex: 0.1.2
       tsconfck: 3.1.1(typescript@5.5.4)
     optionalDependencies:
-      vite: 5.4.1(@types/node@22.4.1)
+      vite: 5.4.2(@types/node@22.4.1)
     transitivePeerDependencies:
       - supports-color
       - typescript
