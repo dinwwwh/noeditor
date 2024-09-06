@@ -1,5 +1,3 @@
-/// <reference types="vite/client" />
-
 import './_dom-polyfill'
 
 import nodemailer from 'nodemailer'

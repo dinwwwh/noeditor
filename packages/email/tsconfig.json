@@ -1,16 +1,7 @@
 {
-  "extends": "@dinwwwh/tsconfig/react-lib.json",
-  "compilerOptions": {
-    "paths": {
-      "@email/*": ["./src/*"]
-    },
-    "types": ["vite/client"]
-  },
-  "include": [
-    "src",
-    "tests",
-    "scripts",
-    "playground",
-    "vite.config.ts"
-  ]
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
+  "files": []
 }

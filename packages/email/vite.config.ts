@@ -2,11 +2,12 @@ import path from 'node:path'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
 import tsconfigPaths from 'vite-tsconfig-paths'
+import react from '@vitejs/plugin-react-swc'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   ssr: {
-    noExternal: [], // Packages that should be bundled
+    noExternal: [], // Packages that should be bundled if used in source code (e.g. packages export typescripts)
   },
   build: {
     ssr: true, // Prevent bundle all dependencies (except linked dependencies, and above noExternal list) and make it usable in node.js
@@ -18,19 +19,7 @@ export default defineConfig({
   },
   plugins: [
     tsconfigPaths(),
-    dts({
-      compilerOptions: {
-        baseUrl: '.', // This will help dts resolve alias imports
-        types: ['vite/client'],
-      },
-      include: ['src'],
-      exclude: [
-        '**/*.test.*',
-        '**/*.spec.*',
-        '**/__tests__/**',
-        '**/__mocks__/**',
-        '**/__snapshots__/**',
-      ],
-    }),
+    dts({ tsconfigPath: path.resolve(__dirname, './tsconfig.app.json') }),
+    react(),
   ],
 })

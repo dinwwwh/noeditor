@@ -14,9 +14,6 @@
     "url": "https://github.com/dinwwwh/noeditor.git",
     "directory": "."
   },
-  "publishConfig": {
-    "access": "public"
-  },
   "keywords": [
     "dinwwwh",
     "noeditor",
@@ -33,13 +30,17 @@
     "react slate react editor",
     "slate react editor"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     ".": {
       "types": "./dist/src/index.d.ts",
       "import": "./dist/index.js",
-      "require": "./dist/index.js"
+      "default": "./dist/index.js"
     },
-    "./css": "./dist/style.css"
+    "./css": "./dist/style.css",
+    "./__DO_NOT_USE__/*": "./dist/*"
   },
   "files": [
     "dist",
@@ -48,8 +49,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:watch": "vite build --watch",
     "preview": "vite preview",
-    "type:check": "tsc --noEmit"
+    "type:check": "tsc -b"
   },
   "peerDependencies": {
     "react": "^18.3.1",
@@ -88,7 +90,7 @@
     "unified": "^11.0.5"
   },
   "devDependencies": {
-    "@dinwwwh/tsconfig": "^0.0.3",
+    "@dinwwwh/tsconfig": "^0.0.5",
     "@fontsource-variable/inter": "^5.0.20",
     "@fontsource-variable/jetbrains-mono": "^5.0.21",
     "@types/prismjs": "^1.26.4",
@@ -97,7 +99,8 @@
     "@vanilla-extract/vite-plugin": "^4.0.13",
     "@vitejs/plugin-react-swc": "^3.7.0",
     "typescript": "^5.5.4",
-    "vite": "^5.4.1",
-    "vite-plugin-dts": "^4.0.3"
+    "vite": "^5.4.3",
+    "vite-plugin-dts": "^4.1.0",
+    "vite-tsconfig-paths": "^5.0.1"
   }
 }
